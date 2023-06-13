@@ -1,0 +1,53 @@
+<!-- <div class="container">
+    <h1 class="text-center mb-4">Image Recognition App</h1>
+    <div class="form-group">
+      <label for="audio-input">Upload Image</label><br>
+      <input id="audio-input" type="file" accept="image/*" (change)="onImageSelect($event)">
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary mb-2" (click)="recognizeImage()">Recognize Image</button>  
+    <div class="text-center">
+      <section class="results" *ngIf="!errorCallingAPI">
+        <p *ngIf="!openAIImageResults">No Results Found</p>
+        <ul *ngIf="openAIImageResults">
+          <li>
+          <img class="result-image" src="{{openAIImageResults}}" alt="{{openAIImageResults}}"/>
+        </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h1 class="text-center mb-4">Audio Transcription App</h1>
+    <div class="form-group">
+      <label for="audio-input">Upload Audio</label><br>
+      <input id="audio-input" type="file" accept="audio/*" (change)="onaudioSelect()">
+    </div>
+    <br>
+    <div class="text-center">
+      <section class="results" *ngIf="transcription">
+        <p>{{transcription}}</p>
+      </section>
+      <section class="error" *ngIf="errorCallingAPI">
+        <p>{{errorCallingAPI}}</p>
+      </section>
+    </div>
+  </div>
+   --><div class="container">
+  <h1 class="text-center mb-4">Audio Transcription App</h1>
+  <div class="form-group">
+    <label for="audio-input">Upload Audio</label><br>
+    <input id="audio-input" type="file" accept="audio/*" (change)="onaudioSelect()">
+  </div>
+  <br>
+  <div class="text-center">
+    <section class="results" *ngIf="transcription">
+      <p>{{transcription}}</p>
+      
+    </section>
+    <!-- <section class="error" *ngIf="errorCallingAPI">
+      <p>{{errorCallingAPI}}</p>
+    </section> -->
+  </div>
+</div>

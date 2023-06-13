@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-center mb-4">Image Generation App</h1>
+    <div class="form-group">
+      <label for="text-inputs">Enter Text</label><br>
+      <input id="image-search" type="text" pInputText   [(ngModel)]="imageSearch">    </div>
+   <br>
+    <button type="button" class="btn btn-primary mb-2" (click)="generateImage()">Generate Image</button>
+    <div class="text-center">
+        <section class="images" *ngIf="imageSearch && !errorCallingAPI">
+            <img *ngFor="let imageUrl of openAIImageResults" class="result-image" src="{{imageUrl}}" alt="{{imageUrl}}"/>
+          </section>         </div>
+  </div>
+  

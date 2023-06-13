@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>
+    Example for code completion
+  </h2>
+  <div class="row">
+      <div class="col-md-6">
+          <div
+              class="form-group">
+              <h3>Request prompt for ChatGPT AI</h3><hr>
+              <!-- <label for="name">Prompt</label> -->
+              <!-- <input type="text" placeholder="Enter your prompt here" class="form-control" [(ngModel)]="promptText" (keyup)="checkResponse()"> -->
+              <input type="text" placeholder="Enter your prompt here" class="form-control" [(ngModel)]="promptText" (keydown)="checkResponse()" id="selectedText">
+              <!-- <input type="text" placeholder="selected value" class="form-control" id="selectedText"> -->
+          </div>
+          <div>
+              <br>
+                  <button class="btn btn-primary" (click)="checkResponse1()">
+                      Check Response
+                  </button>
+          </div>
+      </div>
+  </div>
+  
+  <div class="row">
+
+      <div class="col-md-6">
+          <h3>Response from ChatGPT AI</h3>
+          <ul id="suggestions"></ul>
+          <h4 *ngIf="showSpinner">Processing, please wait...</h4>
+          <!-- <div *ngFor="let choice of response?.choices"> -->
+              <div class="dropdown-menu">
+                  <!-- <a *ngFor="let choice of response?.choices" class="dropdown-item" href="#" (click)="onSelect(choice.text)"> -->
+                      <!-- <p *ngFor="let data of getText(choice.text)" class="responseStyle">{{ data }}</p> -->
+                  <a *ngFor="let choice of response?.choices" class="dropdown-item"> 
+                      <ul>
+                      <li *ngFor="let data of getText(choice.text)" class="responseStyle" (click)="onSelect(data)">{{ data }}</li>
+                      </ul>
+                  </a>
+                  </div>
+
+                  
+              <!-- <p *ngFor="let data of getText(choice.text)" class="responseStyle">
+                  {{data}}
+              <br>
+              </p>                         -->
+          <!-- </div> -->
+      </div>
+      <div class="col-md-6">
+          <h3>Response from ChatGPT AI after click on execute</h3>
+          <textarea id="executedData" rows="10" cols="80"></textarea>
+      </div>
+  </div>
+</div>  
+
+
+  
+          
+
